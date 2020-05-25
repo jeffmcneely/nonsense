@@ -4,7 +4,6 @@
 #include <time.h>
 #include <unistd.h>
 
-
 #define TEST_SIZE 5
 #define TEST_RANGE_MAX 10
 void build_test(void);
@@ -15,10 +14,9 @@ int issamearray(unsigned int *a, unsigned int *b, int size);
 int issorted(unsigned int *array, int size);
 
 int badsort(void);
-int debug = 3;
+int debug = 0;
 
 int main(void) {
-	unsigned long count=0;
 	build_test();
 	unsigned int iteration = 0;
 	if (debug > 0) {
@@ -33,7 +31,7 @@ int main(void) {
 			printf("%5d:", iteration);
 		}
 		if(badsort()) {
-			printf(" winner");
+			printf("winner %d\n", iteration);
 			printf("original\n");
 			printarray(test,TEST_SIZE);
 			return 0;
