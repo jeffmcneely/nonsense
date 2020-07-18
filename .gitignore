@@ -1,2 +1,5 @@
 rand
 badsort
+badsort.o
+.DS_Store
+badsort.dSYM/*
